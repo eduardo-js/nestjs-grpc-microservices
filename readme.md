@@ -1,6 +1,7 @@
 ### NestJs microservices gRPC example
 
 1. Project setup
+   - dependencies: `docker`
 ```bash
     docker-compose up
 ```
