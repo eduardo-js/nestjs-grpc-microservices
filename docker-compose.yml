@@ -1,0 +1,17 @@
+version: '3.9'
+services:
+  nestgrpc:
+    build:
+      context: ./nestjs-grpc
+    container_name: nestgrpc
+    volumes:
+      - ./nestjs-grpc:/home/node/app/
+
+  nestapp:
+    build:
+      context: ./nestjs-rest-client
+    container_name: nestapp
+    ports:
+      - 3000:3000
+    volumes:
+      - ./nestjs-rest-client:/home/node/app/
