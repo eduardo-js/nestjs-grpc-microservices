@@ -1,0 +1,22 @@
+syntax = "proto3";
+package book;
+
+service BookService {
+  rpc FindOne (Bookid) returns (Book) {}
+  rpc FindAll (Empty) returns (stream Books) {}
+}
+
+message Empty {}
+
+message Bookid {
+  int32 id = 1;
+}
+
+message Book {
+  int32 id = 1;
+  string title = 2;
+}
+
+message Books {
+  repeated Book items = 1;
+}
